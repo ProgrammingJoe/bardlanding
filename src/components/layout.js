@@ -1,31 +1,54 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
-import * as React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import { createGlobalStyle } from "styled-components"
+import darkTheme from '../themes/dark'
+import lightTheme from '../themes/light'
+import ThemeToggle from './theme-toggle'
+import BackgroundParticles from './particles/background'
 import "./layout.css"
+import Stars from './particles/stars'
+import Fire from './particles/fire'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    color: ${({ theme }) => theme.text} !important;
+    background: ${({ theme }) => theme.gradient};
+    min-height: 100vh;
+  }
+
+  input {
+    all: unset;
+  }
+`
+
+const DARK_MODE = 'dark'
+const LIGHT_MODE = 'light'
+
+const themeMap = {
+  [DARK_MODE]: darkTheme,
+  [LIGHT_MODE]: lightTheme
+}
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  const [currentTheme, setCurrentTheme] = useState(DARK_MODE)
+  const storedTheme = localStorage.getItem('Theme');
+  const isThemeValid = storedTheme in themeMap
+  const theme = isThemeValid ? themeMap[storedTheme] : 'dark'
 
+  const setTheme = () => {
+    const isDarkMode = currentTheme === 'dark'
+    const nextValue = isDarkMode ? LIGHT_MODE : DARK_MODE
+
+    localStorage.setItem('Theme', nextValue)
+    setCurrentTheme(nextValue)
+  }
+
+  const isDarkMode = currentTheme === 'dark'
+  const particles = isDarkMode ? Stars : Fire
+  console.log(particles)
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
         style={{
           margin: `0 auto`,
@@ -33,16 +56,10 @@ const Layout = ({ children }) => {
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
+        <GlobalStyle theme={theme} />
+        <ThemeToggle setTheme={setTheme} currentTheme={currentTheme}/>
+        <BackgroundParticles particles={particles}/>
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
       </div>
     </>
   )
