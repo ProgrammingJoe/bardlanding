@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
 import darkTheme from '../themes/dark'
 import lightTheme from '../themes/light'
+import cozyTheme from '../themes/cozy'
 import ThemeToggle from './theme-toggle'
 import BackgroundParticles from './particles/background'
 import "./layout.css"
@@ -24,10 +25,12 @@ const GlobalStyle = createGlobalStyle`
 
 const DARK_MODE = 'dark'
 const LIGHT_MODE = 'light'
+const COZY_MODE = 'cozy'
 
 const themeMap = {
   [DARK_MODE]: darkTheme,
-  [LIGHT_MODE]: lightTheme
+  [LIGHT_MODE]: lightTheme,
+  [COZY_MODE]: cozyTheme
 }
 
 const Layout = ({ children }) => {
@@ -46,7 +49,6 @@ const Layout = ({ children }) => {
 
   const isDarkMode = currentTheme === 'dark'
   const particles = isDarkMode ? Stars : Fire
-  console.log(particles)
   return (
     <>
       <div
