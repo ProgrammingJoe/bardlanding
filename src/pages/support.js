@@ -2,14 +2,19 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const ReleasesPage = () => {
+const BlogPage = () => {
 
   return (
     <Layout>
-      <Seo title="Releases" />
+      <Seo title="Support" />
 
+      FAQ
+
+      questions
+      
+      answers
     </Layout>
   )
 }
 
-export default ReleasesPage
+export default BlogPage
