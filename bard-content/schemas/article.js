@@ -34,5 +34,15 @@ export default {
       title: 'Order',
       type: 'number',
     },
+    {
+      name: 'featured',
+      title: 'Featured',
+      type: 'boolean',
+    },
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'url'
+    }
   ],
 }
