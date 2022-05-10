@@ -1,9 +1,8 @@
 export default {
   "colors": {
     "body": "#E8E3D9",
-    "text": "#111111",
-    "black": "#111111",
-    "white": "#FFFFFF",
+    "bodyText": "#111111",
+    "invertText": "#E8E3D9",
     "subtext": "#2F3509",
     "border": "#666936",
     "highlight": "#AC4608",

@@ -12,7 +12,26 @@ import "./layout.css"
 const GlobalStyle = createGlobalStyle`
   body {
     min-height: 100vh;
+    background-color: ${({ theme }) => theme.colors.body};
+
+    p, h1, h2, h3, h4, h5, img {
+      margin: 0px;
+      margin-bottom: 0px;
+    }
+
+    a {
+      font-weight: 600;
+      color: ${({ theme }) => theme.colors.highlight};
+      text-decoration: none;
+
+      p, h1, h2, h3, h4, h5 {
+        color: ${({ theme }) => theme.colors.bodyText};
+        font-weight: 500;
+      }
+    }
   }
+
+
 
   input {
     all: unset;
@@ -20,7 +39,6 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Layout = ({ children }) => {
-  console.log(theme)
 
   return (
     <Auth0Provider

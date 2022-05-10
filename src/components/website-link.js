@@ -6,7 +6,7 @@ const WebsiteLink = ({ website }) => {
   return (
     <div className="website">
       <a href={link} target="_blank" rel="noopener noreferrer">
-        {link}
+        Contact
       </a>
     </div>
   );

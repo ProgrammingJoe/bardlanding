@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import { ItemHeader, Text, SectionHeader } from "../components/typography"
 import { Link } from "gatsby"
 import PageHeader from "../components/page-header"
+import { Section } from "../components/simple"
  
 const FAQ = styled.div`
   padding: 24px 0;
@@ -13,10 +14,18 @@ const FAQ = styled.div`
 
 const FeaturedArticle = styled(Link)`
   padding: 18px;
+  background-color: ${({ theme }) => theme.colors.card.background};
+  border-radius: 6px;
 
   img {
-    max-width: 300px;
+    max-width: 100%;
   }
+`
+
+const Release = styled.div`
+  padding: 18px;
+  background-color: ${({ theme }) => theme.colors.card.background};
+  border-radius: 6px;
 `
 
 const FAQS = styled.div`
@@ -35,9 +44,6 @@ const Releases = styled.div`
   gap: 12px;
 `
 
-const Release = styled.div`
-
-`
 
 const BlogPage = ({ data }) => {
   const faqs = data?.allSanityFaq?.edges
@@ -51,52 +57,58 @@ const BlogPage = ({ data }) => {
 
       <PageHeader header="Support" subHeader="Everyone needs a little support on whatever journey they take"/>
 
-      <SectionHeader>
-        Check out some of our guides so that you can get started on your first quest!
-      </SectionHeader>
+      <Section>
+        <SectionHeader>
+          Check out some of our guides so that you can get started on your first quest!
+        </SectionHeader>
 
-      <Articles>
-        {featuredArticles.sort(
-          (a, b) => a.order - b.order
-        ).map(({ node: article }) => (
-          <FeaturedArticle to={article.embed}>
-            <img src={article.image}/>
-            <ItemHeader>{article.title}</ItemHeader>
-            <Text>{article.description}</Text>
-          </FeaturedArticle>
-        ))}
-      </Articles>
+        <Articles>
+          {featuredArticles.sort(
+            (a, b) => a.order - b.order
+          ).map(({ node: article }) => (
+            <FeaturedArticle to={article.embed}>
+              <img src={article.image}/>
+              <ItemHeader>{article.title}</ItemHeader>
+              <Text>{article.description}</Text>
+            </FeaturedArticle>
+          ))}
+        </Articles>
+      </Section>
 
-      <SectionHeader>
-        We've released some new tools for your next adventure
-      </SectionHeader>
+      <Section>
+        <SectionHeader>
+          We've released some new tools for your next adventure
+        </SectionHeader>
 
-      <Releases>
-        {releases.map(({ node: release }) => (
-          <Release>
-            <ItemHeader>{ release.title }</ItemHeader>
-            <Text>{ release.body[0].children[0].text }</Text>
-            <Text>{ release.publishedAt }</Text>
-          </Release>
-        ))}
-      </Releases>
+        <Releases>
+          {releases.map(({ node: release }) => (
+            <Release>
+              <ItemHeader>{ release.title }</ItemHeader>
+              <Text>{ release.preview }</Text>
+              <Text>{ release.publishedAt }</Text>
+            </Release>
+          ))}
+        </Releases>
+      </Section>
 
-      <SectionHeader>
-        We get these questions a lot. Perhaps they will help you
-        so you can continue on with your tales of adventure.
-      </SectionHeader>
+      <Section>
+        <SectionHeader>
+          We get these questions a lot. Perhaps they will help you
+          so you can continue on with your tales of adventure.
+        </SectionHeader>
 
-      <FAQS>
-        {faqs.sort(
-          (a, b) => a.order - b.order
-        ).map(({ node: faq }) => (
-          <FAQ>
-            <ItemHeader>{faq.question}</ItemHeader>
-            <Text>{faq.answer}</Text>
-            {faq.link && <Link to={faq.link}>{faq.linkTitle}</Link>}
-          </FAQ>
-        ))}
-      </FAQS>
+        <FAQS>
+          {faqs.sort(
+            (a, b) => a.order - b.order
+          ).map(({ node: faq }) => (
+            <FAQ>
+              <ItemHeader>{faq.question}</ItemHeader>
+              <Text>{faq.answer}</Text>
+              {faq.link && <Link to={faq.link}>{faq.linkTitle}</Link>}
+            </FAQ>
+          ))}
+        </FAQS>
+      </Section>
     </Layout>
   )
 }
@@ -134,6 +146,7 @@ export const query = graphql`
         node {
           title
           publishedAt
+          preview
           body {
             style
             list

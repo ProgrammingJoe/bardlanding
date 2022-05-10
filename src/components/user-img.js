@@ -1,8 +1,17 @@
 import React from 'react';
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+  }
+`
 
 const UserImgDefault = ({ user }) => {
   return (
-    <>
+    <Wrapper>
       {user.profile_img ? (
         <img
           src={`https://${process.env.REACT_APP_S3}/${user.profile_img}`}
@@ -16,7 +25,7 @@ const UserImgDefault = ({ user }) => {
           alt="Unsuccessfully loadded."
         />
       )}
-    </>
+    </Wrapper>
   );
 };
 

@@ -14,10 +14,12 @@
     "gatsby-plugin-react-helmet": "^5.11.0",
     "gatsby-plugin-sharp": "^4.11.1",
     "gatsby-source-filesystem": "^4.11.1",
+    "gatsby-source-sanity": "^7.4.2",
     "gatsby-transformer-sharp": "^4.11.0",
     "prop-types": "^15.8.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-feather": "^2.0.9",
     "react-helmet": "^6.1.0",
     "react-tsparticles": "^1.42.4",
     "styled-components": "^5.3.5"

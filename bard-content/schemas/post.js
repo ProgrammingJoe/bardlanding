@@ -41,6 +41,11 @@ export default {
       title: 'Body',
       type: 'blockContent',
     },
+    {
+      name: 'preview',
+      title: 'Preview',
+      type: 'text',
+    },
   ],
 
   preview: {
