@@ -5,6 +5,7 @@ import theme from '../themes/brand'
 import Navbar from "./navbar";
 import { Auth0Provider } from '@auth0/auth0-react';
 import { ThemeProvider } from 'styled-components';
+import Footer from "./footer";
 
 import "./layout.css"
 
@@ -48,19 +49,20 @@ const Layout = ({ children }) => {
       audience="bard-api"
       scope=""
     >
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme}>
+        <div
+          style={{
+            margin: `0 auto`,
+            maxWidth: 960,
+            padding: `0 1.0875rem 1.45rem`,
+          }}
+        >
           <GlobalStyle/>
           <Navbar/>
           <main>{children}</main>
-        </ThemeProvider>
-      </div>
+        </div>
+        <Footer/>
+      </ThemeProvider>
     </Auth0Provider>
   )
 }
