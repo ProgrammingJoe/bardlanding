@@ -4,8 +4,8 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'id',
-      title: 'ID',
+      name: 'slug',
+      title: 'Slug',
       type: 'slug',
     },
     {
@@ -19,8 +19,8 @@ export default {
       type: 'text',
     },
     {
-      name: 'parent',
-      title: 'Parent',
+      name: 'articleParent',
+      title: 'Article Parent',
       type: 'reference',
       to: [{type: 'article'}]
     },
