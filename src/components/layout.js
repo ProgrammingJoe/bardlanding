@@ -45,7 +45,7 @@ const Layout = ({ children }) => {
     <Auth0Provider
       domain="dev-sep7172g.us.auth0.com"
       clientId="BW6LuRzhBMaWLWLOfsmPWs0ATBkeuuN2"
-      redirectUri={window.location.origin}
+      redirectUri={"/"}
       audience="bard-api"
       scope=""
     >
