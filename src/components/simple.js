@@ -15,7 +15,7 @@ export const FlexColumn = styled.div`
 `
 
 export const Section = styled.div`
-  padding: 40px 0;
+  padding: 5rem 0;
 `
 
 export const Tags = styled.div`
@@ -33,4 +33,8 @@ export const Tags = styled.div`
     font-size: 12px;
     font-weight: 600;
   }
+`
+
+export const TextIndent = styled.div`
+  padding: 0 24px;
 `

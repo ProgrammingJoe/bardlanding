@@ -22,12 +22,6 @@ const FeaturedArticle = styled(Link)`
   }
 `
 
-const Release = styled.div`
-  padding: 18px;
-  background-color: ${({ theme }) => theme.colors.card.background};
-  border-radius: 6px;
-`
-
 const FAQS = styled.div`
   display: flex;
   flex-direction: column;
@@ -39,17 +33,9 @@ const Articles = styled.div`
   gap: 12px;
 `
 
-const Releases = styled.div`
-  display: flex;
-  gap: 12px;
-`
-
-
 const BlogPage = ({ data }) => {
   const faqs = data?.allSanityFaq?.edges
   const featuredArticles = data?.allSanityArticle?.edges
-  const releases = data?.allSanityPost?.edges
-  console.log(releases)
 
   return (
     <Layout>
@@ -73,22 +59,6 @@ const BlogPage = ({ data }) => {
             </FeaturedArticle>
           ))}
         </Articles>
-      </Section>
-
-      <Section>
-        <SectionHeader>
-          We've released some new tools for your next adventure
-        </SectionHeader>
-
-        <Releases>
-          {releases.map(({ node: release }) => (
-            <Release>
-              <ItemHeader>{ release.title }</ItemHeader>
-              <Text>{ release.preview }</Text>
-              <Text>{ release.publishedAt }</Text>
-            </Release>
-          ))}
-        </Releases>
       </Section>
 
       <Section>
@@ -138,23 +108,6 @@ export const query = graphql`
           title
           image
           featured
-        }
-      }
-    }
-    allSanityPost(filter: {categories: {elemMatch: {title: {eq: "Release"}}}}) {
-      edges {
-        node {
-          title
-          publishedAt
-          preview
-          body {
-            style
-            list
-            children {
-              marks
-              text
-            }
-          }
         }
       }
     }

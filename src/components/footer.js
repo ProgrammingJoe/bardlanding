@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 `
 
 const Content = styled.div`
-  max-width: 960px;
+  max-width: 1020px;
   display: flex;
   justify-content: space-between;
   margin: auto;

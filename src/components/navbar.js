@@ -8,7 +8,13 @@ import PrimaryButton from "./buttons/primary-button";
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 18px 0;
+  margin: 4rem 0;
+  align-items: center;
+
+  a:first-of-type {
+    font-family: "Pentacle";
+    font-size: 120px;
+  }
 `
 
 const Options = styled.div`
@@ -21,16 +27,21 @@ const Navbar = () => {
   const { loginWithRedirect, isAuthenticated, getAccessTokenSilently } = useAuth0();
 
   return (<Wrapper>
-    <Link to="/">logo</Link>
+    <Link to="/">Bard</Link>
 
-    <Options>
-      <Link to="/about">About</Link>
-      <Link to="/pricing">Pricing</Link>
-      <Link to="/blog">Blog</Link>
-      <Link to="/creators">Creators</Link>
-      <Link to="/support">Support</Link>
-      {isAuthenticated ? <p>Hi Joe</p> : <PrimaryButton onClick={() => loginWithRedirect()}>login</PrimaryButton>}
-    </Options>
+    {!process.env.PRE_LAUNCH ? (
+      <Options>
+        <Link to="/about">About</Link>
+        <Link to="/pricing">Pricing</Link>
+        <Link to="/blog">Blog</Link>
+        <Link to="/creators">Creators</Link>
+        <Link to="/support">Support</Link>
+        {isAuthenticated ? <p>Hi Joe</p> : <PrimaryButton onClick={() => loginWithRedirect()}>login</PrimaryButton>}
+      </Options>
+    ) : (
+      <Text>Coming Summer 2022</Text>
+    )
+    }
   </Wrapper>)
 }
 

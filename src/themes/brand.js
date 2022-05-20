@@ -1,4 +1,7 @@
 export default {
+  "size": {
+    "textIndent": "24px"
+  },
   "colors": {
     "body": "#E8E3D9",
     "bodyText": "#111111",
@@ -14,6 +17,11 @@ export default {
     "success": "green",
     "font": {
       "hover": "#AC4608"
+    },
+    "cta": {
+      "background": "#666936",
+      "border": "#2F3509",
+      "font": "#E8E3D9"
     },
     "card": {
       "background": "#e3d4bd",
