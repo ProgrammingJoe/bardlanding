@@ -90,7 +90,7 @@ const Layout = ({ children }) => {
           <Navbar/>
           <main>{children}</main>
         </div>
-        {!process.env.PRE_LAUNCH && <Footer/>}
+        {!process.env.GATSBY_PRE_LAUNCH && <Footer/>}
       </ThemeProvider>
     </Auth0Provider>
   )

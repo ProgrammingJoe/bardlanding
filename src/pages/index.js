@@ -11,12 +11,10 @@ import Step3Image from '../images/step3.png';
 import Step4Image from '../images/step4.png';
 import Step5Image from '../images/step5.png';
 import Step6Image from '../images/step6.png';
-import federfarbe from '../images/federfarbe.png';
-import lazygyodza from '../images/lazygyodza.png';
 import charra from '../images/charra.png';
 import community from '../images/community.png';
 import ShowcaseImage from '../images/showcase.png';
-import CTA from "../components/cta";
+import Cta from "../components/cta";
 
 const Testimonial = styled.img`
   height: 50px;
@@ -121,7 +119,7 @@ const IndexPage = () => {
         />
       </TextIndent>
 
-      <CTA
+      <Cta
         header="Become a Bard!"
         subHeader="Sign up for the release announcement"
       />
@@ -212,7 +210,7 @@ const IndexPage = () => {
         <img src={ShowcaseImage} alt="A showcase"/>
       </Showcase>
 
-      <CTA
+      <Cta
         header="Sign up for updates"
         subHeader="We'll let you know once the doors are open"
       />
@@ -242,7 +240,7 @@ const IndexPage = () => {
         <img src={community} alt="A showcase"/>
       </Showcase>
 
-      <CTA
+      <Cta
         header="Find your community"
         subHeader="Sign up to get notified of the release"
       />
@@ -287,7 +285,7 @@ const IndexPage = () => {
         </Features>
       </Section>
 
-      <CTA
+      <Cta
         header="Sign me up!"
         subHeader="We'll let you know when it's open"
       />

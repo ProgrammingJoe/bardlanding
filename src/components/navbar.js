@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { SectionHeader, Text } from './typography';
+import { Text } from './typography';
 import { Link } from "gatsby"
 import { useAuth0 } from '@auth0/auth0-react';
 import PrimaryButton from "./buttons/primary-button";
@@ -24,12 +24,12 @@ const Options = styled.div`
 `
 
 const Navbar = () => {
-  const { loginWithRedirect, isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   return (<Wrapper>
     <Link to="/">Bard</Link>
 
-    {!process.env.PRE_LAUNCH ? (
+    {!process.env.GATSBY_PRE_LAUNCH ? (
       <Options>
         <Link to="/about">About</Link>
         <Link to="/pricing">Pricing</Link>

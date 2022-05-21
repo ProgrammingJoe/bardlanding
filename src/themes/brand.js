@@ -1,4 +1,4 @@
-export default {
+const theme = {
   "size": {
     "textIndent": "24px"
   },
@@ -54,3 +54,5 @@ export default {
     }
   },
 }
+
+export default theme
