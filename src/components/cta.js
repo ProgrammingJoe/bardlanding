@@ -58,7 +58,7 @@ const CTA = ({ header, subHeader }) => {
   const subscribeToMoosend = async () => {
     try {
       setMessage("")
-      await axios.post(`${process.env.REACT_APP_API}/website-email-subscription/`, {
+      await axios.post(`${process.env.GATSBY_REACT_APP_API}/website-email-subscription/`, {
         email,
       })
       setMessage("Thank you! Prepare yourself!")

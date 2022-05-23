@@ -90,7 +90,7 @@ const AudioPlayer = ({ id: audioId, audio, onTitleClicked, stacked }) => {
       >
         <audio ref={audioPlayer} className="mini-audio-player" type="audio/mp3">
           <source
-            src={`https://${process.env.REACT_APP_S3}/${audio.file_path}`}
+            src={`https://${process.env.GATSBY_REACT_APP_S3}/${audio.file_path}`}
           />
           <track kind="captions" />
         </audio>

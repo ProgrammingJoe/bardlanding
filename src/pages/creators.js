@@ -30,7 +30,7 @@ const CommissionPage = () => {
   useEffect(() => {
     const getCreators = async () => {
       const response = await axios.get(
-        `${process.env.REACT_APP_API}/profiles/?pro_creators=true&offset=${offset * 10}&limit=10`
+        `${process.env.GATSBY_REACT_APP_API}/profiles/?pro_creators=true&offset=${offset * 10}&limit=10`
       );
       setCreators(response.data.results)
     }
@@ -42,7 +42,7 @@ const CommissionPage = () => {
     <>
       {contentType === 'visuals' && (
         <img
-          src={`https://${process.env.REACT_APP_S3}/${post.file_path}`}
+          src={`https://${process.env.GATSBY_REACT_APP_S3}/${post.file_path}`}
           alt="Unsuccessfully loaded."
         />
       )}
