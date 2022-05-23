@@ -5,20 +5,34 @@ import PageHeader from "../components/page-header"
 import { Section, TextIndent } from "../components/simple"
 import { SectionHeader, ListItem, Text, SectionText } from "../components/typography"
 import styled from "styled-components"
-import Step1Image from '../images/step1.png';
-import Step2Image from '../images/step2.png';
-import Step3Image from '../images/step3.png';
-import Step4Image from '../images/step4.png';
-import Step5Image from '../images/step5.png';
-import Step6Image from '../images/step6.png';
-import charra from '../images/charra.png';
-import community from '../images/community.png';
-import ShowcaseImage from '../images/showcase.png';
+import Step1PNG from '../images/step1.png';
+import Step1WEBP from '../images/step1.webp';
+import Step2PNG from '../images/step2.png';
+import Step2WEBP from '../images/step2.webp';
+import Step3PNG from '../images/step3.png';
+import Step3WEBP from '../images/step3.webp';
+import Step4PNG from '../images/step4.png';
+import Step4WEBP from '../images/step4.webp';
+import Step5PNG from '../images/step5.png';
+import Step5WEBP from '../images/step5.webp';
+import Step6PNG from '../images/step6.png';
+import Step6WEBP from '../images/step6.webp';
+import CharraPNG from '../images/charra.png';
+import CharraWEBP from '../images/charra.webp';
+import CommunityPNG from '../images/community.png';
+import CommunityWEBP from '../images/community.webp';
+import ShowcasePNG from '../images/showcase.png';
+import ShowcaseWEBP from '../images/showcase.webp';
+import HeroPNG from "../images/hero.png";
+import HeroWEBP from "../images/hero.webp";
 import Cta from "../components/cta";
+import Picture from "../components/picture";
 
-const Testimonial = styled.img`
-  height: 50px;
-  margin-top: 8px;
+const Testimonial = styled.div`
+  img {
+    height: 50px;
+    margin-top: 8px;
+  }
 `
 
 const Features = styled.div`
@@ -28,9 +42,38 @@ const Features = styled.div`
   display: flex;
   align-items: stretch;
   margin-bottom: 18px;
+  gap: 10px;
 
   > div {
     flex: 1;
+  }
+`
+
+const HeroWrapper = styled.div`
+  display: flex;
+  gap: 40px;
+
+  > div {
+    flex: 3;
+  }
+  picture {
+    width: 100%;
+    height: auto;
+    flex: 2;
+    align-self: center;
+    margin-right: -2rem;
+  }
+
+  @media (max-width: 1000px) {
+    picture {
+      margin-right: 0px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    picture {
+      display: none;
+    }
   }
 `
 
@@ -47,33 +90,70 @@ const Step = styled.div`
     max-width: 50%;
   }
 
-  img {
+  picture {
     max-width: 50%;
   }
 
   p {
     color: ${({ theme }) => theme.colors.subtext};
   }
+
+  @media (max-width: 1160px) {
+    picture {
+      margin-right: 0px !important;
+      margin-left: 0px !important;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    margin-bottom: 8rem;
+
+    > div {
+      max-width: 90%;
+    }
+    picture {
+      max-width: 60%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    picture {
+      max-width: 90%;
+    }
+  }
 `
 const Step1 = styled(Step)`
   margin: 5rem 0px 15rem 0px;
-  img { margin-right: -4rem; }
+  picture { margin-right: -4rem; }
 `
 const Step2 = styled(Step)`
-  img { margin-left: -4rem; }
+  picture { margin-left: -4rem; }
+
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+  }
 `
 const Step3 = styled(Step)`
-  img { margin-right: -4rem; }
+  picture { margin-right: -4rem; }
 `
 const Step4 = styled(Step)`
-  img { margin-left: -4rem; }
+  picture { margin-left: -4rem; }
+
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+  }
 `
 const Step5 = styled(Step)`
-  img { margin-right: -4rem; }
+  picture { margin-right: -4rem; }
 `
 const Step6 = styled(Step)`
   margin: 15rem 0px 5rem 0px; 
-  img { margin-left: -4rem; }
+  picture { margin-left: -4rem; }
+
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+  }
 `
 
 const Showcase = styled.div`
@@ -110,13 +190,16 @@ const IndexPage = () => {
       <Seo title="Home" />
 
       <TextIndent>
-        <PageHeader
-          header="Creating stories together"
-          subHeader="
-            A storytelling platform for visual, audio, and written creators. Seamlessly bring your stories together with
-            the help of others!
-          "
-        />
+        <HeroWrapper>
+          <PageHeader
+            header="Creating stories together"
+            subHeader="
+              A storytelling platform for visual, audio, and written creators. Seamlessly bring your stories together with
+              the help of others!
+            "
+          />
+          <Picture png={HeroPNG} webp={HeroWEBP} alt="Image of collaboration"/>
+        </HeroWrapper>
       </TextIndent>
 
       <Cta
@@ -141,11 +224,11 @@ const IndexPage = () => {
             it, you get some likes, comments, and a bit of dopamine
           </Text>
         </div>
-        <img src={Step1Image} alt="A painting"/>
+        <Picture png={Step1PNG} webp={Step1WEBP} alt="An image of a social media feed and like buttons"/>
       </Step1>
 
       <Step2>
-        <img src={Step2Image} alt="A painting"/>
+        <Picture png={Step2PNG} webp={Step2WEBP} alt="An image of a story"/>
         <div>
           <SectionHeader>Let's try something new together</SectionHeader>
           <Text>
@@ -162,11 +245,11 @@ const IndexPage = () => {
             We support visual work, music, voice lines, songs, poems, stories, and more!
           </Text>
         </div>
-        <img src={Step3Image} alt="A painting"/>
+        <Picture png={Step3PNG} webp={Step3WEBP} alt="A painting"/>
       </Step3>
 
       <Step4>
-        <img src={Step4Image} alt="A painting"/>
+        <Picture png={Step4PNG} webp={Step4WEBP} alt="A painting with music being added to it"/>
         <div>
           <SectionHeader>Watch others collaborate with you</SectionHeader>
           <Text>
@@ -184,11 +267,11 @@ const IndexPage = () => {
             music tell your tale, or bring the visuals together with a painting
           </Text>
         </div>
-        <img src={Step5Image} alt="A painting"/>
+        <Picture png={Step5PNG} webp={Step5WEBP} alt="A collaboration with writing being added to it"/>
       </Step5>
 
       <Step6>
-        <img src={Step6Image} alt="A painting"/>
+        <Picture png={Step6PNG} webp={Step6WEBP} alt="A complete collaboration of art"/>
         <div>
           <SectionHeader>Rejoice in the experiences you create</SectionHeader>
           <Text>
@@ -207,7 +290,7 @@ const IndexPage = () => {
       </Section>
 
       <Showcase>
-        <img src={ShowcaseImage} alt="A showcase"/>
+        <Picture png={ShowcasePNG} webp={ShowcaseWEBP} alt="A showcase of collaborations"/>
       </Showcase>
 
       <Cta
@@ -224,20 +307,22 @@ const IndexPage = () => {
             attribution. And then when I got to read the delighted comments by artists
             for whom sharing work was usually a one-way street, it brought me so much joy!
           </Text>
-          <Testimonial src={charra} alt="Charra's profile picture"/>
+          <Testimonial>
+            <Picture png={CharraPNG} webp={CharraWEBP} alt="Charra's profile picture"/>
+          </Testimonial>
         </TextIndent>
       </Section>
 
       <Section>
         <SectionText>
           To tie it altogether, we also offer a set of user moderated forum style
-          communities. Start a group, join a group, and build some real connections
+          communities. Start or join a group and build some real connections
           with people on the internet.
         </SectionText>
       </Section>
 
       <Showcase>
-        <img src={community} alt="A showcase"/>
+        <Picture png={CommunityPNG} webp={CommunityWEBP} alt="A showcase of art on Bard"/>
       </Showcase>
 
       <Cta

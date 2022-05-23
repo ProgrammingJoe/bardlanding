@@ -16,6 +16,10 @@ export const FlexColumn = styled.div`
 
 export const Section = styled.div`
   padding: 5rem 0;
+
+  @media (max-width: 800px) {
+    padding: 3rem 0;
+  }
 `
 
 export const Tags = styled.div`
@@ -36,5 +40,10 @@ export const Tags = styled.div`
 `
 
 export const TextIndent = styled.div`
+  position: relative;
   padding: 0 24px;
+
+  @media (max-width: 1000px) {
+    padding: 0 12px;
+  }
 `

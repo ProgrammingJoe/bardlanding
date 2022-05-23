@@ -21,6 +21,10 @@ const Options = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
 `
 
 const Navbar = () => {
@@ -39,7 +43,9 @@ const Navbar = () => {
         {isAuthenticated ? <p>Hi Joe</p> : <PrimaryButton onClick={() => loginWithRedirect()}>login</PrimaryButton>}
       </Options>
     ) : (
-      <Text>Coming Summer 2022</Text>
+      <Options>
+        <Text>Coming Summer 2022</Text>
+      </Options>
     )
     }
   </Wrapper>)

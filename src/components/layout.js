@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     background-color: ${({ theme }) => theme.colors.body};
 
-    p, h1, h2, h3, h4, h5, img {
+    p, h1, h2, h3, h4, h5, picture {
       margin: 0px;
       margin-bottom: 0px;
     }
