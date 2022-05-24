@@ -5,7 +5,7 @@ export const Header = styled.h1`
   margin-bottom: 3rem;
   font-family: "Hanesy";
   font-weight: 600;
-  letter-spacing: 1.5;
+  letter-spacing: 1.5px;
 
   @media (max-width: 1000px) {
     font-size: 90px;
