@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Header, PageSubHeader } from './typography';
 
 const Wrapper = styled.div`
-  padding: 60px 24px 80px 24px;
+  padding: 60px 24px 80px 0px;
 `
 
 const PageHeader = ({ header, subHeader }) => (

@@ -195,18 +195,16 @@ const IndexPage = () => {
         "
       />
 
-      <TextIndent>
-        <HeroWrapper>
-          <PageHeader
-            header="Creating stories together"
-            subHeader="
-              A storytelling platform for visual, audio, and written creators. Seamlessly bring your stories together with
-              the help of others!
-            "
-          />
-          <Picture png={HeroPNG} webp={HeroWEBP} alt="Image of collaboration"/>
-        </HeroWrapper>
-      </TextIndent>
+      <HeroWrapper>
+        <PageHeader
+          header="Creating stories together"
+          subHeader="
+            A community based storytelling platform for visual, audio, and written creators. Seamlessly
+            bring your stories together with the help of others!
+          "
+        />
+        <Picture png={HeroPNG} webp={HeroWEBP} alt="Image of collaboration"/>
+      </HeroWrapper>
 
       <Cta
         header="Become a Bard!"

@@ -31,8 +31,8 @@ export const PageSubHeader = styled.h2`
 export const SectionHeader = styled.h3`
   font-size: 48px;
   line-height: 60px;
-  letter-spacing: 1.5px;
   margin-bottom: 40px;
+  font-weight: 500;
 
   @media (max-width: 1000px) {
     font-size: 36px;
@@ -49,6 +49,7 @@ export const ItemHeader = styled.h4`
   font-size: 28px;
   margin-bottom: 4px;
   font-family: "Hanesy";
+  letter-spacing: 1.2px;
 
   @media (max-width: 1000px) {
     font-size: 22px;
