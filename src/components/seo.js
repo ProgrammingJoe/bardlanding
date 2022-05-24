@@ -52,12 +52,16 @@ function Seo({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: ``,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
         {
           name: `twitter:creator`,
-          content: ``,
+          content: `@BardSocial`,
         },
         {
           name: `twitter:title`,
@@ -66,6 +70,10 @@ function Seo({ description, lang, meta, title }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          property: `twitter:image`,
+          content: ``,
         },
       ].concat(meta)}
     />

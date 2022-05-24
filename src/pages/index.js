@@ -187,7 +187,13 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo
+        title="Bard | Community based storytelling social media platform"
+        description="
+          A storytelling platform for visual, audio, and written
+          creators. Seamlessly bring your stories together with the help of others!
+        "
+      />
 
       <TextIndent>
         <HeroWrapper>
@@ -210,7 +216,7 @@ const IndexPage = () => {
       <Section>
         <TextIndent>
           <SectionText>
-            Existing social media platforms are poor at building
+            Existing social media platforms are poor at fostering
             communities and are sometimes outright exhausting for creators
           </SectionText>
         </TextIndent>
