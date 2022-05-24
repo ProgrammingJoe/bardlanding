@@ -61,7 +61,7 @@ const CTA = ({ header, subHeader }) => {
       await axios.post(`${process.env.GATSBY_REACT_APP_API}/website-email-subscription/`, {
         email,
       })
-      setMessage("Thank you! Prepare yourself!")
+      setMessage("Thank you! You're all signed up!")
     } catch (err) {
       setMessage("It didn't work, let me know on Twitter!")
     }
