@@ -189,7 +189,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo
-        title="Bard | Community based storytelling social media platform"
+        title="Bard"
         description="
           A storytelling platform for visual, audio, and written
           creators. Seamlessly bring your stories together with the help of others!

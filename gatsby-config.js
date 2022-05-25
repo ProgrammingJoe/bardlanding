@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Bard Storytelling Social Media Platform`,
+    title: `Community based storytelling social media platform`,
     description: `Bard is a community based storytelling social media platform for creatives, including illustrators, artists, music producers, writers, voice actors, poets, and any other visual, audio, or written art forms`,
     author: `@bardsocial`,
     siteUrl: `https://bard.social/`,
