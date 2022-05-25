@@ -287,7 +287,7 @@ const IndexPage = () => {
 
       <Section>
         <SectionText>
-          Like Bard's in a tavern, we encourage open collaboration and offer a
+          Like Bards in a tavern, we encourage open collaboration and offer a
           warm, cozy place to jam with other creators and meet new friends online. Tell
           the stories that are currently just in your imagination and we'll work on sharing
           your work with as many people as possible!
