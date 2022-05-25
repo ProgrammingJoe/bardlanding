@@ -15,16 +15,19 @@ import "./layout.css"
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: "Hanesy";
+    font-display: swap;
     src: url(${Hanesy}) format('opentype');
   }
 
   @font-face {
     font-family: "Pentacle";
+    font-display: swap;
     src: url(${Pentacle}) format('opentype');
   }
 
   @font-face {
     font-family: "Avenir";
+    font-display: swap;
     src: url(${Avenir}) format('opentype');
   }
 
