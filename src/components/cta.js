@@ -43,6 +43,8 @@ const Form = styled.div`
   input {
     height: 42px;
     padding: 0px 6px;
+    max-width: 290px;
+    width: 80%;
   }
 
   button {
@@ -54,6 +56,8 @@ const Form = styled.div`
     flex-direction: column;
     gap: 12px;
     align-items: stretch;
+    width: 100%;
+    max-width: 440px;
   }
 `
 
