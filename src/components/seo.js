@@ -25,7 +25,6 @@ function Seo({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
 
   return (
     <Helmet
@@ -33,7 +32,6 @@ function Seo({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       meta={[
         {
           name: `description`,
@@ -53,7 +51,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: 'https://postimg.cc/5jqB3J4B',
+          content: 'https://i.postimg.cc/2jg0CjgK/Bard-Pinterest-Cover-Art.png',
         },
         {
           name: `twitter:card`,
@@ -73,7 +71,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           property: `twitter:image`,
-          content: 'https://postimg.cc/5jqB3J4B',
+          content: 'https://i.postimg.cc/2jg0CjgK/Bard-Pinterest-Cover-Art.png',
         },
       ].concat(meta)}
     />
