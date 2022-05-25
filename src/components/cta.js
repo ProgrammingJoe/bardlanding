@@ -81,7 +81,7 @@ const CTA = ({ header, subHeader }) => {
         <input
           type="text"
           name="email"
-          id="email"
+          id={`${header}-email`}
           value={email}
           placeholder="Enter email"
           onChange={(e) => setEmail(e.target.value)}
