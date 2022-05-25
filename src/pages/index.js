@@ -182,7 +182,8 @@ const IndexPage = () => {
     "D&D Campaigns",
     "DTIYS events",
     "Tips",
-    "Gifting subscriptions"
+    "Gifting subscriptions",
+    "Post reactions",
   ]
 
   return (

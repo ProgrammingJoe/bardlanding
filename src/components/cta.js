@@ -49,6 +49,12 @@ const Form = styled.div`
     height: 40px;
     padding: 0px 12x;
   }
+
+  @media (max-width: 440px) {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
 `
 
 const CTA = ({ header, subHeader }) => {
