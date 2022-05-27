@@ -19,6 +19,8 @@ import Step6PNG from '../images/step6.png';
 import Step6WEBP from '../images/step6.webp';
 import CharraPNG from '../images/charra.png';
 import CharraWEBP from '../images/charra.webp';
+import FederfarbePNG from '../images/federfarbe.png';
+import FederfarbeWEBP from '../images/federfarbe.webp';
 import CommunityPNG from '../images/community.png';
 import CommunityWEBP from '../images/community.webp';
 import ShowcasePNG from '../images/showcase.png';
@@ -29,6 +31,8 @@ import Cta from "../components/cta";
 import Picture from "../components/picture";
 
 const Testimonial = styled.div`
+  margin-bottom: 24px;
+
   img {
     height: 50px;
     margin-top: 8px;
@@ -314,6 +318,16 @@ const IndexPage = () => {
           </Text>
           <Testimonial>
             <Picture png={CharraPNG} webp={CharraWEBP} alt="Charra's profile picture"/>
+          </Testimonial>
+          <Text>
+            As an illustrator, I never knew that I was missing the opportunity to easily
+            collaborate with musicians and writers. It's an amazing feeling to bring your
+            creations more depth with the help of others and to explore more of your own creativity
+            through the language of other great artists. On top of that, it's a great way to make
+            meaningful and enriching connections!
+          </Text>
+          <Testimonial>
+            <Picture png={FederfarbePNG} webp={FederfarbeWEBP} alt="Federfarbe's profile picture"/>
           </Testimonial>
         </TextIndent>
       </Section>
