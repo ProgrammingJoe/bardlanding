@@ -8,7 +8,7 @@ const theme = {
     "invertText": "#E8E3D9",
     "subtext": "#2F3509",
     "border": "#666936",
-    "highlight": "#AC4608",
+    "highlight": "#C24F09",
     "tag": "#666936",
     "gradienttop": "#E8E3D9",
     "gradientbottom": "#E8E3D9",
@@ -16,7 +16,7 @@ const theme = {
     "error": "red",
     "success": "green",
     "font": {
-      "hover": "#AC4608"
+      "hover": "#C24F09"
     },
     "cta": {
       "background": "#666936",

@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
@@ -6,6 +6,7 @@ import { ItemHeader, ListItem, ItemSubHeader, SectionHeader, Text } from "../com
 import { Link } from "gatsby"
 import PageHeader from "../components/page-header"
 import { Section } from "../components/simple"
+import axios from 'axios'
 
 const Pricing = styled.div`
   display: flex;
@@ -36,7 +37,18 @@ const ProgressBar = styled.div`
 `
 
 const PricingPage = () => {
+  const [proCount, setProCount] = useState(0)
 
+  useEffect(() => {
+    getUsageInfo()
+  }, [])
+
+  const getUsageInfo = async () => {
+    const stats = await axios.get(`${process.env.GATSBY_REACT_APP_API}/usage_stats/`);
+    setProCount(stats.data.pro_count);
+  };
+
+  const revenue = proCount * 5
   return (
     <Layout>
       <Seo title="Pricing" />
@@ -80,15 +92,14 @@ const PricingPage = () => {
         <SectionHeader>Keeping the place running</SectionHeader>
         <Text>
           We don't run advertisements, sell your data, or require a subscription but we do need to pay rent.
-          Here is a progress bar for the minimum amount of money we need to make each month to keep the app running and 
-          continue working on Bard full time.
+          Here is a progress bar for the minimum amount of money we need to make each month to keep the app running.
+          Granted, this number will grow as Bard grows.
         </Text>
-
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '40px' }}>
           <Text>$0</Text>
           <Text>$300</Text>
         </div>
-        <ProgressBar><div style={{ flex: 40 }}/><div style={{ flex: 260 }}/></ProgressBar>
+        <ProgressBar><div style={{ flex: revenue }}/><div style={{ flex: 300 - revenue }}/></ProgressBar>
       </Section>
     </Layout>
   )

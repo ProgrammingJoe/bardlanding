@@ -36,12 +36,20 @@ const GlobalStyle = createGlobalStyle`
       margin-bottom: 0px;
     }
 
+    img {
+      pointer-events: none;
+      font-size: 0px;
+      line-height: 0px;
+      display: block;
+      margin-bottom: 0px;
+    }
+
     p, h1, h2, h3, h4, h5, picture {
       margin: 0px;
       margin-bottom: 0px;
     }
 
-    p, h2, h4, h5, input, button {
+    p, h2, h4, h5, input, button, a {
       font-family: "Avenir";
     }
 
@@ -76,7 +84,7 @@ const Layout = ({ children }) => {
 
   return (
     <Auth0Provider
-      domain="dev-sep7172g.us.auth0.com"
+      domain="auth.bard.social"
       clientId="BW6LuRzhBMaWLWLOfsmPWs0ATBkeuuN2"
       redirectUri={"/"}
       audience="bard-api"

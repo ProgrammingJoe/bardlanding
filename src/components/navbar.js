@@ -11,9 +11,8 @@ const Wrapper = styled.div`
   margin: 4rem 0;
   align-items: center;
 
-  a:first-of-type {
-    font-family: "Pentacle";
-    font-size: 120px;
+  img {
+    height: 4rem;
   }
 `
 
@@ -31,7 +30,9 @@ const Navbar = () => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   return (<Wrapper>
-    <Link to="/">Bard</Link>
+    <Link to="/">
+      <img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/BeeFree/beefree-ydavamrkycn/Royal-Orange-Logo.png" alt="Bard Logo"/>
+    </Link>
 
     {!process.env.GATSBY_PRE_LAUNCH ? (
       <Options>
