@@ -7,6 +7,12 @@ export const FlexRow = styled.div`
   align-items: center;
 `
 
+export const FlexRowSpace = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
 export const FlexColumn = styled.div`
   display: flex;
   flex-direction: column;

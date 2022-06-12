@@ -91,7 +91,7 @@ export const SectionText = styled.h4`
   font-size: 36px;
   line-height: 48px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
 
   @media (max-width: 1000px) {
     font-size: 28px;
@@ -101,6 +101,7 @@ export const SectionText = styled.h4`
 
 export const SubText = styled.p`
   font-size: 20px;
+  margin: ${({ margin }) => margin ? margin : '0px'};
 
   @media (max-width: 1000px) {
     font-size: 18px;

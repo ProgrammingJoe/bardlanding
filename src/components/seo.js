@@ -51,7 +51,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: 'https://i.postimg.cc/2jg0CjgK/Bard-Pinterest-Cover-Art.png',
+          content: 'https://dkt4eyd7dv0ic.cloudfront.net/company/banner-green.jpg',
         },
         {
           name: `twitter:card`,
@@ -71,7 +71,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           property: `twitter:image`,
-          content: 'https://i.postimg.cc/2jg0CjgK/Bard-Pinterest-Cover-Art.png',
+          content: 'https://dkt4eyd7dv0ic.cloudfront.net/company/banner-green.jpg',
         },
       ].concat(meta)}
     />

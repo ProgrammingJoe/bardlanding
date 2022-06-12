@@ -3,10 +3,10 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { ItemHeader, Text } from "../components/typography"
+import { ItemHeader } from "../components/typography"
 import PageHeader from "../components/page-header"
 import { graphql } from "gatsby"
-import { Tags } from "../components/simple"
+import { Tags, TextIndent } from "../components/simple"
 
 const Blogs = styled.div`
   display: flex;
@@ -20,6 +20,11 @@ const Blog = styled(Link)`
   gap: 12px;
 
   padding: 18px 0;
+
+  p {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
 `
 
 const BlogPage = ({ data }) => {
@@ -27,31 +32,37 @@ const BlogPage = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="Blogs" />
+      <Seo
+        title="Bard | Blog"
+        description="
+          Read about our announcements, our thoughts on topics in the creative industries, and our releases
+        "
+      />
 
       <PageHeader
-        header="Blogs"
+        header="Blog"
         subHeader="
           When we aren't creating stories with all of you, we also write 
           about the industry, what we care about, our releases, and many other things
         "
       />
 
-      <Blogs>
-        {blogs.sort(
-          (a, b) => a.order - b.order
-        ).map(({ node: blog }) => (
-          <Blog>
-            <ItemHeader>{blog.title}</ItemHeader>
-            <Text>{blog.preview}</Text>
-            <Tags>
-              {blog.categories.map((category) => <span>{category.title}</span>)}
-            </Tags>
-            <Link to={`/blog/${blog.slug.current}`}>Read more</Link>
-          </Blog>
-        ))}
-      </Blogs>
-
+      <TextIndent>
+        <Blogs>
+          {blogs.sort(
+            (a, b) => a.order - b.order
+          ).map(({ node: blog }) => (
+            <Blog>
+              <ItemHeader>{blog.title}</ItemHeader>
+              <p>{blog.preview}</p>
+              <Link to={`/blog/${blog.slug.current}`}>Read more</Link>
+              <Tags>
+                {blog.categories.map((category) => <span>{category.title}</span>)}
+              </Tags>
+            </Blog>
+          ))}
+        </Blogs>
+      </TextIndent>
     </Layout>
   )
 }

@@ -73,7 +73,9 @@ const CommissionPage = () => {
 
   return (
     <Layout>
-      <Seo title="Commissions" />
+      <Seo
+        title="Commissions"
+      />
 
       <PageHeader
         header="Creators"

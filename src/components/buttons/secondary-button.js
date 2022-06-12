@@ -43,7 +43,6 @@ export const SecondaryDropdown = styled(Dropdown)`
   border-radius: 4px;
   color: ${({ theme }) => theme.colors.buttons.secondary.color};
   background-color: ${({ theme }) => theme.colors.buttons.secondary.background};
-  font-weight: 600;
   border: 1px solid ${({ theme }) => theme.colors.buttons.secondary.background};
   padding: 0.6rem 1.2rem;
   line-height: 20px;

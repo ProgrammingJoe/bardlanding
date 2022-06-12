@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components';
-import { Text } from './typography';
 import { Link } from "gatsby"
 import { useAuth0 } from '@auth0/auth0-react';
 import PrimaryButton from "./buttons/primary-button";
@@ -12,7 +11,11 @@ const Wrapper = styled.div`
   align-items: center;
 
   img {
-    height: 4rem;
+    height: 3rem;
+  }
+
+  a {
+    font-size: 22px;
   }
 `
 
@@ -45,7 +48,7 @@ const Navbar = () => {
       </Options>
     ) : (
       <Options>
-        <Text>Coming Summer 2022</Text>
+        <Link to="/blog">Blog</Link>
       </Options>
     )
     }

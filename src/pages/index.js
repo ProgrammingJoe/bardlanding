@@ -31,7 +31,7 @@ import Cta from "../components/cta";
 import Picture from "../components/picture";
 
 const Testimonial = styled.div`
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 
   img {
     height: 50px;
@@ -290,12 +290,14 @@ const IndexPage = () => {
       </Step6>
 
       <Section>
-        <SectionText>
-          Like Bards in a tavern, we encourage open collaboration and offer a
-          warm, cozy place to jam with other creators and meet new friends online. Tell
-          the stories that are currently just in your imagination and we'll work on sharing
-          your work with as many people as possible!
-        </SectionText>
+        <TextIndent>
+          <SectionText>
+            Like Bards in a tavern, we encourage open collaboration and offer a
+            warm, cozy place to jam with other creators and meet new friends online. Tell
+            the stories that are currently just in your imagination and we'll work on sharing
+            your work with as many people as possible!
+          </SectionText>
+        </TextIndent>
       </Section>
 
       <Showcase>
@@ -333,11 +335,13 @@ const IndexPage = () => {
       </Section>
 
       <Section>
-        <SectionText>
-          To tie it altogether, we also offer a set of user moderated forum style
-          communities. Start or join a group and build some real connections
-          with people on the internet.
-        </SectionText>
+        <TextIndent>
+          <SectionText>
+            To tie it altogether, we also offer a set of user moderated forum style
+            communities. Start or join a group and build some real connections
+            with people on the internet.
+          </SectionText>
+        </TextIndent>
       </Section>
 
       <Showcase>
@@ -350,9 +354,11 @@ const IndexPage = () => {
       />
 
       <Section>
-        <SectionText>
-          And if you need some final convincing, here's a list of everything we offer
-        </SectionText>
+        <TextIndent>
+          <SectionText>
+            And if you need some final convincing, here's a list of everything we offer
+          </SectionText>
+        </TextIndent>
       </Section>
 
       <Section>

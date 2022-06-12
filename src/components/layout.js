@@ -8,7 +8,7 @@ import { ThemeProvider } from 'styled-components';
 import Footer from "./footer";
 import Hanesy from './../fonts/HanesyNL-Regular.otf';
 import Pentacle from './../fonts/Pentacle-Gothic.otf';
-import Avenir from './../fonts/AvenirLTProBook.otf';
+import Montserrat from './../fonts/Montserrat.ttf';
 import "./layout.css"
 
 
@@ -24,8 +24,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @font-face {
-    font-family: "Avenir";
-    src: url(${Avenir}) format('opentype');
+    font-family: "Montserrat";
+    src: url(${Montserrat}) format('truetype');
   }
 
   body {
@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     p, h2, h4, h5, input, button, a {
-      font-family: "Avenir";
+      font-family: "Montserrat";
     }
 
     h1, h3 {
@@ -58,13 +58,13 @@ const GlobalStyle = createGlobalStyle`
     }
 
     a {
-      font-weight: 600;
+      font-weight: 500;
       color: ${({ theme }) => theme.colors.highlight};
       text-decoration: none;
 
       p, h1, h2, h3, h4, h5 {
         color: ${({ theme }) => theme.colors.bodyText};
-        font-weight: 500;
+        font-weight: 400;
       }
     }
   }
@@ -93,7 +93,7 @@ const Layout = ({ children }) => {
       <ThemeProvider theme={theme}>
         <div
           style={{
-            margin: `0 auto`,
+            margin: `0 auto 40px auto`,
             maxWidth: 1020,
             padding: `0 1.0875rem 1.45rem`,
           }}
