@@ -10,12 +10,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         allSanityPost {
           nodes {
             preview
-            publishedAt(locale: "")
+            publishedAt(formatString: "YYYY-MM-DD")
             title
+            categories {
+              title
+            }
             slug {
               current
             }
             id
+            _rawBody
           }
         }
       }
