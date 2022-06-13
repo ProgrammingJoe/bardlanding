@@ -21,7 +21,7 @@ const Blog = styled(Link)`
 
   padding: 18px 0;
 
-  p {
+  p.blog-preview {
     font-size: 1.2rem;
     line-height: 1.4rem;
   }
@@ -54,7 +54,7 @@ const BlogPage = ({ data }) => {
           ).map(({ node: blog }) => (
             <Blog>
               <ItemHeader>{blog.title}</ItemHeader>
-              <p>{blog.preview}</p>
+              <p className="blog-preview">{blog.preview}</p>
               <Link to={`/blog/${blog.slug.current}`}>Read more</Link>
               <Tags>
                 {blog.categories.map((category) => <span>{category.title}</span>)}
