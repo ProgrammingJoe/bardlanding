@@ -53,7 +53,7 @@ const BlogPage = ({ data }) => {
             (a, b) => a.order - b.order
           ).map(({ node: blog }) => (
             <Blog>
-              <ItemHeader>{blog.title}</ItemHeader>
+              <Link to={`/blog/${blog.slug.current}`}><ItemHeader>{blog.title}</ItemHeader></Link>
               <p className="blog-preview">{blog.preview}</p>
               <Link to={`/blog/${blog.slug.current}`}>Read more</Link>
               <Tags>
