@@ -58,9 +58,28 @@ module.exports = {
       resolve: 'gatsby-plugin-iubenda-cookie-footer',
       options: {
         iubendaOptions: {
-          "lang":"en",
-          "siteId":2723185,
-          "cookiePolicyId":98067353
+          "ccpaAcknowledgeOnDisplay": true,
+          "consentOnContinuedBrowsing": false,
+          "countryDetection": true,
+          "enableCcpa": true,
+          "floatingPreferencesButtonDisplay": "bottom-right",
+          "gdprAppliesGlobally": false,
+          "invalidateConsentWithoutLog": true,
+          "lang": "en",
+          "perPurposeConsent": true,
+          "siteId": 2723185,
+          "whitelabel": false,
+          "cookiePolicyId": 98067353,
+          "banner": {
+            "acceptButtonDisplay": true,
+            "closeButtonDisplay": false,
+            "customizeButtonDisplay": true,
+            "explicitWithdrawal": true,
+            "listPurposes": true,
+            "logo": null,
+            "position": "float-bottom-center",
+            "rejectButtonDisplay": true
+          }
         },
       }
     }
