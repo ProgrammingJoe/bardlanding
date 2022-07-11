@@ -53,6 +53,16 @@ module.exports = {
         // Unique site id
         siteId: 'WZYELUGA'
       }
+    },
+    {
+      resolve: 'gatsby-plugin-iubenda-cookie-footer',
+      options: {
+        iubendaOptions: {
+          "lang":"en",
+          "siteId":2723185,
+          "cookiePolicyId":98067353
+        },
+      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
