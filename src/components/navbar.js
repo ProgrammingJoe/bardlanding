@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Link } from "gatsby"
 import { useAuth0 } from '@auth0/auth0-react';
 import PrimaryButton from "./buttons/primary-button";
+import { Menu } from 'react-feather';
+import { useLocation } from '@reach/router';
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,12 +19,27 @@ const Wrapper = styled.div`
   a {
     font-size: 22px;
   }
+
+  .mobile-menu {
+    display: none;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .mobile-menu {
+      display: block;
+    }
+  }
 `
 
 const Options = styled.div`
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
 
   @media (max-width: 600px) {
     display: none;
@@ -30,28 +47,25 @@ const Options = styled.div`
 `
 
 const Navbar = () => {
-  const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const location = useLocation()
+  // const { loginWithRedirect, isAuthenticated } = useAuth0();
+
+  if (location?.pathname === '/menu') return <div/>
 
   return (<Wrapper>
     <Link to="/">
       <img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/BeeFree/beefree-ydavamrkycn/Royal-Orange-Logo.png" alt="Bard Logo"/>
     </Link>
 
-    {!process.env.GATSBY_PRE_LAUNCH ? (
-      <Options>
-        <Link to="/about">About</Link>
-        <Link to="/pricing">Pricing</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/creators">Creators</Link>
-        <Link to="/support">Support</Link>
-        {isAuthenticated ? <p>Hi Joe</p> : <PrimaryButton onClick={() => loginWithRedirect()}>login</PrimaryButton>}
-      </Options>
-    ) : (
-      <Options>
-        <Link to="/blog">Blog</Link>
-      </Options>
-    )
-    }
+    <Options>
+      <Link to="/about">About</Link>
+      <Link to="/pricing">Pricing</Link>
+      <Link to="/blog">Blog</Link>
+      <Link to="/support">Support</Link>
+      {/* {isAuthenticated ? <p>Hi Joe</p> : <PrimaryButton onClick={() => loginWithRedirect()}>login</PrimaryButton>} */}
+    </Options>
+
+    <Link to="/menu" className="mobile-menu"><Menu/></Link>
   </Wrapper>)
 }
 

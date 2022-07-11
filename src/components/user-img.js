@@ -2,6 +2,8 @@ import React from 'react';
 import styled from "styled-components";
 
 const Wrapper = styled.div`
+  flex: 0 0 80px;
+  
   img {
     width: 80px;
     height: 80px;

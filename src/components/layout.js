@@ -10,6 +10,7 @@ import Hanesy from './../fonts/HanesyNL-Regular.otf';
 import Pentacle from './../fonts/Pentacle-Gothic.otf';
 import Montserrat from './../fonts/Montserrat.ttf';
 import "./layout.css"
+import { useLocation } from '@reach/router';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -81,28 +82,31 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Layout = ({ children }) => {
+  const location = useLocation()
 
   return (
     <Auth0Provider
-      domain="auth.bard.social"
+      domain="dev-sep7172g.us.auth0.com"
       clientId="BW6LuRzhBMaWLWLOfsmPWs0ATBkeuuN2"
-      redirectUri={"/"}
+      cacheLocation="localstorage"
+      useRefreshTokens={true}
+      redirectUri={window.location.origin}
       audience="bard-api"
-      scope=""
+      scope="read:current_user|read:email|email"
     >
       <ThemeProvider theme={theme}>
         <div
           style={{
             margin: `0 auto 40px auto`,
             maxWidth: 1020,
-            padding: `0 1.0875rem 1.45rem`,
+            padding: location?.pathname === '/menu' ? '0' : `0 1.0875rem 1.45rem`,
           }}
         >
           <GlobalStyle/>
           <Navbar/>
           <main>{children}</main>
         </div>
-        {!process.env.GATSBY_PRE_LAUNCH && <Footer/>}
+        <Footer/>
       </ThemeProvider>
     </Auth0Provider>
   )

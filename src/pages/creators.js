@@ -85,7 +85,7 @@ const CommissionPage = () => {
         "
       />
 
-      <FlexRow style={{ width: "110%", marginLeft: "-5%" }}>
+      <FlexColumn>
         {creators.map((creator) => (
           <Creator key={creator.username}>
             <FlexRow gap="20px">
@@ -106,7 +106,7 @@ const CommissionPage = () => {
             </FlexRow>
           </Creator>
         ))}
-      </FlexRow>
+      </FlexColumn>
     </Layout>
   )
 }

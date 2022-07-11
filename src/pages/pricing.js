@@ -13,6 +13,7 @@ const Pricing = styled.div`
   gap: 30px;
   align-items: stretch;
   justify-content: center;
+  flex-wrap: wrap;
 `
 
 const Plan = styled.div`
@@ -56,8 +57,7 @@ const PricingPage = () => {
       <PageHeader
         header="Pricing"
         subHeader="
-          Join the college of Bards today! Bard is a free platform with an optional subscription. We 
-          need to pay the bills in order for the college to survive, so if you can, toss a coin our way.
+          Bard is a free platform with an optional subscription that offers a number of benefits
         "
       />
 
@@ -71,16 +71,15 @@ const PricingPage = () => {
             <ListItem>All your essential social media tools</ListItem>
             <ListItem>A chronological, unfiltered, timeline</ListItem>
             <ListItem>Collaborating features</ListItem>
-            <ListItem>A feed from people you follow only</ListItem>
             <ListItem>Free updates forever</ListItem>
           </Plan>
           
           <Plan>
-            <ItemHeader>College Member</ItemHeader>
+            <ItemHeader>Pro Plan</ItemHeader>
             <ItemSubHeader margin="0 0 28px 0">$5/Month</ItemSubHeader>
 
             <ListItem>All free features</ListItem>
-            <ListItem><Link to="/creators">Commission and service advertising</Link></ListItem>
+            <ListItem>Commission and service advertising</ListItem>
             <ListItem>Profile flair</ListItem>
             <ListItem>Show up first in service listings</ListItem>
             <ListItem>More to come!</ListItem>
@@ -93,11 +92,11 @@ const PricingPage = () => {
         <Text>
           We don't run advertisements, sell your data, or require a subscription but we do need to pay rent.
           Here is a progress bar for the minimum amount of money we need to make each month to keep the app running.
-          Granted, this number will grow as Bard grows.
+          Granted, this number will grow as Bard grows and the more this grows the more time we can spend improving Bard.
         </Text>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '40px' }}>
           <Text>$0</Text>
-          <Text>$300</Text>
+          <Text>$400</Text>
         </div>
         <ProgressBar><div style={{ flex: revenue }}/><div style={{ flex: 300 - revenue }}/></ProgressBar>
       </Section>

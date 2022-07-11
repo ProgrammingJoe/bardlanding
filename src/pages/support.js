@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { graphql } from "gatsby"
 import styled from 'styled-components'
-import { ItemHeader, Text, SectionHeader } from "../components/typography"
+import { ItemHeader, Text, SectionHeader, SubText } from "../components/typography"
 import { Link } from "gatsby"
 import PageHeader from "../components/page-header"
 import { Section } from "../components/simple"
@@ -43,7 +43,7 @@ const BlogPage = ({ data }) => {
 
       <PageHeader header="Support" subHeader="Everyone needs a little support on whatever journey they take"/>
 
-      <Section>
+      {/* <Section>
         <SectionHeader>
           Check out some of our guides so that you can get started on your first quest!
         </SectionHeader>
@@ -59,7 +59,7 @@ const BlogPage = ({ data }) => {
             </FeaturedArticle>
           ))}
         </Articles>
-      </Section>
+      </Section> */}
 
       <Section>
         <SectionHeader>
@@ -74,7 +74,7 @@ const BlogPage = ({ data }) => {
             <FAQ>
               <ItemHeader>{faq.question}</ItemHeader>
               <Text>{faq.answer}</Text>
-              {faq.link && <Link to={faq.link}>{faq.linkTitle}</Link>}
+              {faq.link && <SubText margin="12px 0 0 0"><Link to={`/${faq.link}`}>{faq.linkTitle}</Link></SubText>}
             </FAQ>
           ))}
         </FAQS>

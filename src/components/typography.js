@@ -47,7 +47,7 @@ export const SectionHeader = styled.h3`
 
 export const ItemHeader = styled.h4`
   font-size: 28px;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
   font-family: "Hanesy";
   letter-spacing: 1.2px;
 
@@ -58,6 +58,7 @@ export const ItemHeader = styled.h4`
 
 export const ItemSubHeader = styled.h5`
   font-size: 24px;
+  font-weight: 500;
   margin: ${({ margin }) => margin ? margin : "0px"};
 
   @media (max-width: 1000px) {
@@ -69,7 +70,7 @@ export const ItemSubHeader = styled.h5`
 
 export const ListItem = styled.p`
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 10px;
 
   @media (max-width: 1000px) {
