@@ -45,6 +45,15 @@ module.exports = {
         graphqlTag: 'default',
       },
     },
+    {
+      resolve: 'gatsby-plugin-fathom',
+      options: {
+        // Your custom domain, defaults to `cdn.usefathom.com`
+        trackingUrl: 'https://bard.social/',
+        // Unique site id
+        siteId: 'WZYELUGA'
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
