@@ -3,7 +3,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import styled from "styled-components"
 import { ItemHeader, ListItem, ItemSubHeader, SectionHeader, Text } from "../components/typography"
-import { Link } from "gatsby"
 import PageHeader from "../components/page-header"
 import { Section } from "../components/simple"
 import axios from 'axios'
@@ -38,7 +37,7 @@ const ProgressBar = styled.div`
 `
 
 const PricingPage = () => {
-  const [proCount, setProCount] = useState(0)
+  const [proCount, setProCount] = useState(8)
 
   useEffect(() => {
     getUsageInfo()
@@ -46,7 +45,9 @@ const PricingPage = () => {
 
   const getUsageInfo = async () => {
     const stats = await axios.get(`${process.env.GATSBY_REACT_APP_API}/usage_stats/`);
-    setProCount(stats.data.pro_count);
+    if (stats.data.pro_count > 8) {
+      setProCount(stats.data.pro_count);
+    }
   };
 
   const revenue = proCount * 5

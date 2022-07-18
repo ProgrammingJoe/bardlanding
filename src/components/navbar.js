@@ -48,7 +48,7 @@ const Options = styled.div`
 
 const Navbar = () => {
   const location = useLocation()
-  // const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   if (location?.pathname === '/menu') return <div/>
 
@@ -62,7 +62,7 @@ const Navbar = () => {
       <Link to="/pricing">Pricing</Link>
       <Link to="/blog">Blog</Link>
       <Link to="/support">Support</Link>
-      {/* {isAuthenticated ? <p>Hi Joe</p> : <PrimaryButton onClick={() => loginWithRedirect()}>login</PrimaryButton>} */}
+      {isAuthenticated ? <a href="https://app.bard.social/">Login</a> : <PrimaryButton onClick={() => loginWithRedirect()}>Login</PrimaryButton>}
     </Options>
 
     <Link to="/menu" className="mobile-menu"><Menu/></Link>

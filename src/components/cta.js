@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ItemHeader, Text, SubText } from "./typography";
 import axios from 'axios';
 import PrimaryButton from './buttons/primary-button';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.cta.background};
@@ -57,6 +58,10 @@ const Form = styled.div`
     gap: 12px;
     align-items: stretch;
 
+    button {
+      align-self: center;
+    }
+
     input {
       width: 100%;
       max-width: 440px;
@@ -64,9 +69,10 @@ const Form = styled.div`
   }
 `
 
-const CTA = ({ header, subHeader }) => {
+const CTA = ({ header, subHeader, login }) => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const { loginWithRedirect } = useAuth0();
 
   const subscribeToMoosend = async () => {
     try {
@@ -76,7 +82,7 @@ const CTA = ({ header, subHeader }) => {
       })
       setMessage("Thank you! You're all signed up!")
     } catch (err) {
-      setMessage("It didn't work, let me know on Twitter!")
+      setMessage("It didn't work, let me know or try again!")
     }
   }
 
@@ -84,18 +90,27 @@ const CTA = ({ header, subHeader }) => {
     <Wrapper>
       <ItemHeader>{header}</ItemHeader>
       <Text>{subHeader}</Text>
-      <Form>
-        <input
-          type="text"
-          name="email"
-          id={`${header}-email`}
-          value={email}
-          placeholder="Enter email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <PrimaryButton onClick={() => subscribeToMoosend()}>Subscribe</PrimaryButton>
-      </Form>
-      <SubText>{message}</SubText>
+      {login ? (
+        <Form>
+          <PrimaryButton onClick={() => loginWithRedirect()}>Login</PrimaryButton>
+        </Form>
+      ) : (
+        <>
+          <Form>
+            <input
+              type="text"
+              name="email"
+              id={`${header}-email`}
+              value={email}
+              placeholder="Enter email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <PrimaryButton onClick={() => subscribeToMoosend()}>Subscribe</PrimaryButton>
+          </Form>
+          <SubText>{message}</SubText>
+        </>
+      )}
+
     </Wrapper>
   )
 }

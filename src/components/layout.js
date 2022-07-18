@@ -90,7 +90,7 @@ const Layout = ({ children }) => {
       clientId="BW6LuRzhBMaWLWLOfsmPWs0ATBkeuuN2"
       cacheLocation="localstorage"
       useRefreshTokens={true}
-      redirectUri={'/'}
+      redirectUri="https://app.bard.social/"
       audience="bard-api"
       scope="read:current_user|read:email|email"
     >
