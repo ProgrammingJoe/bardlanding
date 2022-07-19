@@ -50,9 +50,9 @@ const BlogPage = ({ data }) => {
       <TextIndent>
         <Blogs>
           {blogs.sort(
-            (a, b) => a.order - b.order
+            (a, b) => new Date(b.node.publishedAt) - new Date(a.node.publishedAt)
           ).map(({ node: blog }) => (
-            <Blog>
+            <Blog key={blog.slug.current}>
               <Link to={`/blog/${blog.slug.current}`}><ItemHeader>{blog.title}</ItemHeader></Link>
               <p className="blog-preview">{blog.preview}</p>
               <Link to={`/blog/${blog.slug.current}`}>Read more</Link>
