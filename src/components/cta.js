@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { ItemHeader, Text, SubText } from "./typography";
 import axios from 'axios';
 import PrimaryButton from './buttons/primary-button';
-import { useAuth0 } from '@auth0/auth0-react';
 
 const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.cta.background};
@@ -14,6 +13,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   margin: 5rem 0px;
   gap: 12px;
+  align-items: center;
 
   h4, p {
     color: ${({ theme }) => theme.colors.cta.font};
@@ -58,7 +58,7 @@ const Form = styled.div`
     gap: 12px;
     align-items: stretch;
 
-    button {
+    button, a {
       align-self: center;
     }
 
@@ -69,10 +69,9 @@ const Form = styled.div`
   }
 `
 
-const CTA = ({ header, subHeader, login }) => {
+const CTA = ({ header, subHeader, appLink }) => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
-  const { loginWithRedirect } = useAuth0();
 
   const subscribeToMoosend = async () => {
     try {
@@ -90,10 +89,13 @@ const CTA = ({ header, subHeader, login }) => {
     <Wrapper>
       <ItemHeader>{header}</ItemHeader>
       <Text>{subHeader}</Text>
-      {login ? (
-        <Form>
-          <PrimaryButton onClick={() => loginWithRedirect()}>Login</PrimaryButton>
-        </Form>
+      {appLink ? (
+        <a
+          href="https://app.bard.social/"
+          target="_blank"
+          rel="noopener noreferrer">
+            <PrimaryButton>Go to Bard</PrimaryButton>
+        </a>
       ) : (
         <>
           <Form>

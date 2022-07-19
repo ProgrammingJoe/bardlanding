@@ -214,7 +214,7 @@ const IndexPage = () => {
       <Cta
         header="Become a Bard!"
         subHeader="Sign up for the platform"
-        login={true}
+        appLink={true}
       />
 
       <Section>
@@ -352,7 +352,7 @@ const IndexPage = () => {
       <Cta
         header="Find your community"
         subHeader="Sign up to join communities today"
-        login={true}
+        appLink={true}
       />
 
       <Section>
@@ -400,7 +400,7 @@ const IndexPage = () => {
       <Cta
         header="Sign me up!"
         subHeader="It's time to start collaborating with others"
-        login={true}
+        appLink={true}
       />
     </Layout>
   )
