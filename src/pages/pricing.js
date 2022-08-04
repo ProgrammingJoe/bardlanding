@@ -96,10 +96,10 @@ const PricingPage = () => {
           Granted, this number will grow as Bard grows and the more this grows the more time we can spend improving Bard.
         </Text>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '40px' }}>
-          <Text>$0</Text>
-          <Text>$400</Text>
+          <Text>${revenue}/month</Text>
+          <Text>$500 · 2022 Goal</Text>
         </div>
-        <ProgressBar><div style={{ flex: revenue }}/><div style={{ flex: 300 - revenue }}/></ProgressBar>
+        <ProgressBar><div style={{ flex: revenue }}/><div style={{ flex: 500 - revenue }}/></ProgressBar>
       </Section>
     </Layout>
   )
