@@ -53,9 +53,9 @@ const Navbar = () => {
 
   return (<Wrapper>
     <Link to="/">
-      <img src="https://d15k2d11r6t6rl.cloudfront.net/public/users/BeeFree/beefree-ydavamrkycn/Royal-Orange-Logo.png" alt="Bard Logo"/>
+      <img src="https://dkt4eyd7dv0ic.cloudfront.net/company/Royal-Orange-Logo.png" alt="Bard Logo"/>
     </Link>
-
+    
     <Options>
       <Link to="/about">About</Link>
       <Link to="/pricing">Pricing</Link>
