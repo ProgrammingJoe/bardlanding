@@ -16,6 +16,7 @@ const Pricing = styled.div`
 `
 
 const Plan = styled.div`
+  flex: 1;
   padding: 18px;
   background-color: ${({ theme }) => theme.colors.card.background};
   border-radius: 6px;
@@ -44,7 +45,7 @@ const PricingPage = () => {
   }, [])
 
   const getUsageInfo = async () => {
-    const stats = await axios.get(`${process.env.GATSBY_REACT_APP_API}/usage_stats/`);
+    const stats = await axios.get(`https://web-production-11db1.up.railway.app/api/usage_stats/`);
     if (stats.data.pro_count > 8) {
       setProCount(stats.data.pro_count);
     }
@@ -80,9 +81,7 @@ const PricingPage = () => {
             <ItemSubHeader margin="0 0 28px 0">$5/Month</ItemSubHeader>
 
             <ListItem>All free features</ListItem>
-            <ListItem>Commission and service advertising</ListItem>
             <ListItem>Profile flair</ListItem>
-            <ListItem>Show up first in service listings</ListItem>
             <ListItem>More to come!</ListItem>
           </Plan>
         </Pricing>
@@ -91,15 +90,14 @@ const PricingPage = () => {
       <Section>
         <SectionHeader>Keeping the place running</SectionHeader>
         <Text>
-          We don't run advertisements, sell your data, or require a subscription but we do need to pay rent.
+          We don't run advertisements, sell your data, or require a subscription but we do need to pay the bills.
           Here is a progress bar for the minimum amount of money we need to make each month to keep the app running.
-          Granted, this number will grow as Bard grows and the more this grows the more time we can spend improving Bard.
         </Text>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '40px' }}>
           <Text>${revenue}/month</Text>
-          <Text>$500 · 2022 Goal</Text>
+          <Text>$300</Text>
         </div>
-        <ProgressBar><div style={{ flex: revenue }}/><div style={{ flex: 500 - revenue }}/></ProgressBar>
+        <ProgressBar><div style={{ flex: revenue }}/><div style={{ flex: 300 - revenue }}/></ProgressBar>
       </Section>
     </Layout>
   )

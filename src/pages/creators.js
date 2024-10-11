@@ -92,10 +92,6 @@ const CommissionPage = () => {
               <UserImgDefault user={creator}/>
               <FlexColumn>
                 <p>{creator.username}</p>
-                <Tags>
-                  {creator.coms_open && <span>Commissions</span>}
-                  {creator.looking_for_work && <span>Looking for work</span>}
-                </Tags>
                 <WebsiteLink website={creator.website} />
               </FlexColumn>
               <FlexRow>

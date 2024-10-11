@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { createGlobalStyle } from "styled-components"
 import theme from '../themes/brand'
 import Navbar from "./navbar";
-import { Auth0Provider } from '@auth0/auth0-react';
 import { ThemeProvider } from 'styled-components';
 import Footer from "./footer";
 import Hanesy from './../fonts/HanesyNL-Regular.otf';
@@ -85,30 +84,20 @@ const Layout = ({ children }) => {
   const location = useLocation()
 
   return (
-    <Auth0Provider
-      domain="dev-sep7172g.us.auth0.com"
-      clientId="BW6LuRzhBMaWLWLOfsmPWs0ATBkeuuN2"
-      cacheLocation="localstorage"
-      useRefreshTokens={true}
-      redirectUri="https://app.bard.social/"
-      audience="bard-api"
-      scope="read:current_user|read:email|email"
-    >
-      <ThemeProvider theme={theme}>
-        <div
-          style={{
-            margin: `0 auto 40px auto`,
-            maxWidth: 1020,
-            padding: location?.pathname === '/menu' ? '0' : `0 1.0875rem 1.45rem`,
-          }}
-        >
-          <GlobalStyle/>
-          <Navbar/>
-          <main>{children}</main>
-        </div>
-        <Footer/>
-      </ThemeProvider>
-    </Auth0Provider>
+    <ThemeProvider theme={theme}>
+      <div
+        style={{
+          margin: `0 auto 40px auto`,
+          maxWidth: 1020,
+          padding: location?.pathname === '/menu' ? '0' : `0 1.0875rem 1.45rem`,
+        }}
+      >
+        <GlobalStyle/>
+        <Navbar/>
+        <main>{children}</main>
+      </div>
+      <Footer/>
+    </ThemeProvider>
   )
 }
 

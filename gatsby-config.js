@@ -50,36 +50,6 @@ module.exports = {
       options: {
         siteId: 'WZYELUGA'
       }
-    },
-    {
-      resolve: 'gatsby-plugin-iubenda-cookie-footer',
-      options: {
-        iubendaOptions: {
-          "ccpaAcknowledgeOnDisplay": true,
-          "consentOnContinuedBrowsing": false,
-          "countryDetection": true,
-          "enableCcpa": true,
-          "priorConsent": false,
-          "floatingPreferencesButtonDisplay": "anchored-bottom-left",
-          "gdprAppliesGlobally": false,
-          "invalidateConsentWithoutLog": true,
-          "lang": "en",
-          "perPurposeConsent": true,
-          "siteId": 2723185,
-          "whitelabel": false,
-          "cookiePolicyId": 98067353,
-          "banner": {
-            "acceptButtonDisplay": true,
-            "closeButtonDisplay": false,
-            "customizeButtonDisplay": true,
-            "explicitWithdrawal": true,
-            "listPurposes": true,
-            "logo": null,
-            "position": "float-bottom-center",
-            "rejectButtonDisplay": true
-          }
-        },
-      }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

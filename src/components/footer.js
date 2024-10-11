@@ -65,16 +65,12 @@ const Footer = () => {
         <div>
           <Section>Contact</Section>
           <a href="https://twitter.com/BardSocial" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a href="https://www.pinterest.ca/bardsocial/" target="_blank" rel="noopener noreferrer">Pinterest</a>
-          <a href="https://www.youtube.com/channel/UCQTnMwtnL2HovKzywF7jqow" target="_blank" rel="noopener noreferrer">Youtube</a>
-          <a href="https://discord.gg/v7EmGDw" target="_blank" rel="noopener noreferrer">Discord</a>
           <a href="mailto:hello@bard.social" target="_blank" rel="noopener noreferrer">Email</a>
         </div>
         <div>
           <Section>Legal</Section>
-          <Link to="https://www.iubenda.com/terms-and-conditions/98067353">Terms and Conditions</Link>
-          <Link to="https://www.iubenda.com/privacy-policy/98067353">Privacy Policy</Link>
-          <Link to="https://www.iubenda.com/privacy-policy/98067353/cookie-policy">Cookie Policy</Link>
+          <a href="https://www.termsfeed.com/live/a4effae6-987a-4143-b04e-8861ac051e56" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+          <a href="https://www.termsfeed.com/live/5a2c488d-4fd6-477a-8110-85aa653b9f49" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
         </div>
       </Content>
     </Wrapper>

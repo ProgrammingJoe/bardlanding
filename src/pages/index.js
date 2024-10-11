@@ -166,28 +166,16 @@ const Showcase = styled.div`
 
 const IndexPage = () => {
   const features = [
+    "Seamless collaboration",
     "No ads",
     "No 'algorithm'",
     "Chronological feeds",
+    "That old internet feel",
     "Customization",
-    "Portfolio site",
-    "Seamless collaboration",
-    "Forum style communities",
-    "Private communities",
     "Custom themes",
     "Multi media post types",
-    "Commission advertising",
-    "Easy upload"
-  ]
-
-  const future = [
-    "Collections of art",
-    "Events",
-    "D&D Campaigns",
-    "DTIYS events",
-    "Tips",
-    "Gifting subscriptions",
-    "Post reactions",
+    "Easy upload",
+    "Worldbuilding"
   ]
 
   return (
@@ -338,9 +326,8 @@ const IndexPage = () => {
       <Section>
         <TextIndent>
           <SectionText>
-            To tie it altogether, we also offer a set of user moderated forum style
-            communities. Start or join a group and build some real connections
-            with people on the internet.
+            To tie it altogether, we also offer the ability to create collections, which empower artists to collaborate
+            on entire worlds together.
           </SectionText>
         </TextIndent>
       </Section>
@@ -350,8 +337,8 @@ const IndexPage = () => {
       </Showcase>
 
       <Cta
-        header="Find your community"
-        subHeader="Sign up to join communities today"
+        header="Build your own world"
+        subHeader="Sign up to join contribute today"
         appLink={true}
       />
 
@@ -377,21 +364,6 @@ const IndexPage = () => {
           <div>
             {features.slice(Math.ceil(features.length/2), features.length).map((feature) => (
               <ListItem>{ feature }</ListItem>
-            ))}
-          </div>
-        </Features>
-        <TextIndent>
-          <Text>And some other things on our mind</Text>
-        </TextIndent>
-        <Features>
-          <div>
-            {future.slice(0, Math.ceil(future.length/2)).map((idea) => (
-              <ListItem>{ idea }</ListItem>
-            ))}
-          </div>
-          <div>
-            {future.slice(Math.ceil(future.length/2), future.length).map((idea) => (
-              <ListItem>{ idea }</ListItem>
             ))}
           </div>
         </Features>
