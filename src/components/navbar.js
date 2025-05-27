@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 import { Link } from "gatsby"
-import { useAuth0 } from '@auth0/auth0-react';
-import PrimaryButton from "./buttons/primary-button";
-import { Menu } from 'react-feather';
-import { useLocation } from '@reach/router';
+import { useAuth0 } from "@auth0/auth0-react"
+import PrimaryButton from "./buttons/primary-button"
+import { Menu } from "react-feather"
+import { useLocation } from "@reach/router"
 
 const Wrapper = styled.div`
   display: flex;
@@ -49,28 +49,32 @@ const Options = styled.div`
 const Navbar = () => {
   const location = useLocation()
 
-  if (location?.pathname === '/menu') return <div/>
+  if (location?.pathname === "/menu") return <div />
 
-  return (<Wrapper>
-    <Link to="/">
-      <img src="https://bard-social.s3.us-west-2.amazonaws.com/company/Royal-Orange-Logo.png" alt="Bard Logo"/>
-    </Link>
-    
-    <Options>
-      <Link to="/about">About</Link>
-      <Link to="/pricing">Pricing</Link>
-      <Link to="/blog">Blog</Link>
-      <Link to="/support">Support</Link>
-      <a
-        href="https://app.bard.social/"
-        target="_blank"
-        rel="noopener noreferrer">
+  return (
+    <Wrapper>
+      <Link to="/">
+        <img
+          src="https://bard-social.s3.us-west-2.amazonaws.com/company/Royal-Orange-Logo.png"
+          alt="Bard Logo"
+        />
+      </Link>
+
+      <Options>
+        <Link to="/about">About</Link>
+        <Link to="/pricing">Pricing</Link>
+        <Link to="/blog">Blog</Link>
+        <Link to="/support">Support</Link>
+        <a href="https://bard.art/" target="_blank" rel="noopener noreferrer">
           App
-      </a>
-    </Options>
+        </a>
+      </Options>
 
-    <Link to="/menu" className="mobile-menu"><Menu/></Link>
-  </Wrapper>)
+      <Link to="/menu" className="mobile-menu">
+        <Menu />
+      </Link>
+    </Wrapper>
+  )
 }
 
-export default Navbar;
+export default Navbar

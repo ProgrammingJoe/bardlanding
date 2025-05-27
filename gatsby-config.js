@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Community based storytelling social media platform`,
     description: `Bard is a community based storytelling social media platform for creatives, including illustrators, artists, music producers, writers, voice actors, poets, and any other visual, audio, or written art forms`,
-    author: `@bardsocial`,
-    siteUrl: `https://bard.social/`,
+    author: `@bardart`,
+    siteUrl: `https://site.bard.art/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -42,15 +42,15 @@ module.exports = {
         token: process.env.SANITY_TOKEN,
         // If the Sanity GraphQL API was deployed using `--tag <name>`,
         // use `graphqlTag` to specify the tag name. Defaults to `default`.
-        graphqlTag: 'default',
+        graphqlTag: "default",
       },
     },
     {
-      resolve: 'gatsby-plugin-fathom',
+      resolve: "gatsby-plugin-fathom",
       options: {
-        siteId: 'WZYELUGA'
-      }
-    }
+        siteId: "WZYELUGA",
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

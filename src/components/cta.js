@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import styled from "styled-components";
-import { ItemHeader, Text, SubText } from "./typography";
-import axios from 'axios';
-import PrimaryButton from './buttons/primary-button';
+import React, { useState } from "react"
+import styled from "styled-components"
+import { ItemHeader, Text, SubText } from "./typography"
+import axios from "axios"
+import PrimaryButton from "./buttons/primary-button"
 
 const Wrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.cta.background};
@@ -15,7 +15,8 @@ const Wrapper = styled.div`
   gap: 12px;
   align-items: center;
 
-  h4, p {
+  h4,
+  p {
     color: ${({ theme }) => theme.colors.cta.font};
   }
 
@@ -37,7 +38,8 @@ const Form = styled.div`
   justify-content: center;
   margin-top: 18px;
 
-  input, button {
+  input,
+  button {
     border-radius: 6px;
   }
 
@@ -58,7 +60,8 @@ const Form = styled.div`
     gap: 12px;
     align-items: stretch;
 
-    button, a {
+    button,
+    a {
       align-self: center;
     }
 
@@ -70,15 +73,18 @@ const Form = styled.div`
 `
 
 const CTA = ({ header, subHeader, appLink }) => {
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [email, setEmail] = useState("")
+  const [message, setMessage] = useState("")
 
   const subscribeToMoosend = async () => {
     try {
       setMessage("")
-      await axios.post(`${process.env.GATSBY_REACT_APP_API}/website-email-subscription/`, {
-        email,
-      })
+      await axios.post(
+        `https://web-production-11db1.up.railway.app/api/website-email-subscription/`,
+        {
+          email,
+        }
+      )
       setMessage("Thank you! You're all signed up!")
     } catch (err) {
       setMessage("It didn't work, let me know or try again!")
@@ -90,11 +96,8 @@ const CTA = ({ header, subHeader, appLink }) => {
       <ItemHeader>{header}</ItemHeader>
       <Text>{subHeader}</Text>
       {appLink ? (
-        <a
-          href="https://app.bard.social/"
-          target="_blank"
-          rel="noopener noreferrer">
-            <PrimaryButton>Go to Bard</PrimaryButton>
+        <a href="https://bard.art/" target="_blank" rel="noopener noreferrer">
+          <PrimaryButton>Go to Bard</PrimaryButton>
         </a>
       ) : (
         <>
@@ -105,16 +108,17 @@ const CTA = ({ header, subHeader, appLink }) => {
               id={`${header}-email`}
               value={email}
               placeholder="Enter email"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={e => setEmail(e.target.value)}
             />
-            <PrimaryButton onClick={() => subscribeToMoosend()}>Subscribe</PrimaryButton>
+            <PrimaryButton onClick={() => subscribeToMoosend()}>
+              Subscribe
+            </PrimaryButton>
           </Form>
           <SubText>{message}</SubText>
         </>
       )}
-
     </Wrapper>
   )
 }
 
-export default CTA;
+export default CTA
